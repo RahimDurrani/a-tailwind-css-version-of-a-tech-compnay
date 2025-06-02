@@ -4,67 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="src/output.css">
+   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+     <link rel="stylesheet" href="src/output.css">
     <title>The Company</title>
     <link rel="icon" href="images/favicon.png">
 </head>
-<body class="font-serif text-white">
- <header class="lg:px-16 px-4 bg-gray-800 flex flex-wrap items-center py-4 shadow-md">
+<body class="font-serif text-white scroll-smooth md:scroll-auto">
+ <header class="lg:px-16 px-4 bg-gray-800 flex flex-wrap items-center py-4 shadow-md static">
     <div class="flex-1 flex justify-between items-center">
-        <img src="images/greenLogo.png" class="w-36 " alt="">
+      <img src="images/greenLogo.png" class="w-36" alt="Logo">
+
+      <!-- Hamburger Button -->
+      <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 group z-50">
+        <span class="block w-6 h-0.5 bg-white transition-transform duration-300 origin-center group-[.open]:rotate-45 group-[.open]:translate-y-1.5"></span>
+        <span class="block w-6 h-0.5 bg-white transition-opacity duration-300 group-[.open]:opacity-0"></span>
+        <span class="block w-6 h-0.5 bg-white transition-transform duration-300 origin-center group-[.open]:-rotate-45 group-[.open]:-translate-y-1.5"></span>
+      </button>
     </div>
 
-    <label for="menu-toggle" class="pointer-cursor md:hidden block">
-      <svg class="fill-current text-gray-900"
-        xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-        <title>menu</title>
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-      </svg>
-    </label>
-    <input class="hidden" type="checkbox" id="menu-toggle" />
-
-    <div class="hidden md:flex md:items-center md:w-auto w-full" id="menu">
-        <nav>
-            <ul class="md:flex items-center justify-between text-base  pt-4 md:pt-0">
-                <li><a class="md:p-4 py-3 px-0 block hover:text-green-700 " href="#">AboutUs</a></li>
-                <li><a class="md:p-4 py-3 px-0 block hover:text-green-700 " href="#">Services</a></li>
-                <li><a class="md:p-4 py-3 px-0 block hover:text-green-700 " href="#">Projects</a></li>
-                <li><a class="md:p-4 py-3 px-0 block hover:text-green-700  md:mb-0 mb-2" href="#">Contact Us</a></li>
-            </ul>
-        </nav>
+    <!-- Navigation Menu -->
+    <div id="menu"
+         class="transition-all duration-300 ease-in-out overflow-hidden max-h-0 opacity-0 md:opacity-100 md:max-h-full md:flex md:items-center md:w-auto w-full">
+      <nav>
+        <ul class="md:flex text-center justify-between text-base pt-4 md:pt-0">
+          <li><a class="md:p-4 py-3 px-0 block hover:text-green-700" href="#">About Us</a></li>
+          <li><a class="md:p-4 py-3 px-0 block hover:text-green-700" href="#">Services</a></li>
+          <li><a class="md:p-4 py-3 px-0 block hover:text-green-700" href="#">Projects</a></li>
+          <li><a class="md:p-4 py-3 px-0 block hover:text-green-700 md:mb-0 mb-2" href="#">Contact Us</a></li>
+        </ul>
+      </nav>
     </div>
-</header>
-    <div class="flex justify-between md:flex-nowrap flex-wrap  bg-radial to-blue-950 bg-green-300 w-full h-auto lg:flex-1/2">
-        <div class="p-12 sm:grid-cols-2">
-            <h1 class=" font-bold font-stretch-50% text-2xl text-white sm:p-2">
+  </header>
+   <div class="flex justify-between md:flex-nowrap flex-wrap  bg-radial to-blue-950 bg-green-300 w-full  content-center-safe lg:flex-1/2" id="Home">
+        <div class="p-12 sm:grid-cols-2 ">
+            <h1 class=" font-bold font-stretch-50% text-2xl text-white md: p-2">
                 Lets Build <span class="text-green-500" >Future</span> togather 
             </h1>
             <p class="text-white sm:p-2 ">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur laborum deleniti
                  aperiam dolores sint eveniet aliquam, quibusdam error ad asperiores, minus est modi 
                  optio quas fuga molestiae illo nesciunt voluptatem?
- 
                 </p>
-                     <div class="p-10, sm:p-2">
-            <button class="bg-green-800 text-white rounded-2xl h-9 w-36 cursor-pointer hover:bg-white hover:text-green-800">
+                     <div class=" mt-6  text-center, sm:p-2">
+            <button class="bg-green-800  text-white rounded-2xl h-9 w-36 cursor-pointer hover:bg-white  hover:shadow-md shadow-fuchsia-600, shadow-md shadow-indigo-500/50  hover:text-green-800">
             Read more
         </button>
         </div>      
  
             </div>
  
-        <div >
-            <img src="images/4.png" class="w-2xl p-4 ,md:w-2xl md:p-14 " alt="">
+        <div class="" >
+            <img src="images/4.png" class="lg:w-4xl p-4 ,md:w-2xl md:p-14 " id="img" alt="">
         </div> 
     </div>
 <!-- About -->
-    <div class="bg-gray-800 h-auto w-full ">
-        <h1 class="text-center text-5xl text-white">
+    <div class="bg-gray-800 h-auto w-full md:flex-nowrap flex-wrap md:flex-row-reverse " >
+         <div class="text-center align-middle justify-center flex  relative p-5" id="two">
+                    <h1 class="text-center text-5xl text-white p-3 absolute  opacity-100 " id="text">
             About <span class="text-green-700" >Us</span>
         </h1>
-        <div class="flex flex-1/2 justify-between md:flex-nowrap flex-wrap md:flex-row-reverse">
-            <div class="p-11 ">
-                <p>
+     
+        </div>
+
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-20 mt-20 px-8">   
+            <div class="p-25 ">
+                   <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium iste distinctio vel, 
                     sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
                      sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
@@ -72,17 +78,20 @@
                        sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
                      laborum atque voluptate vitae, quaerat inventore?
                 </p>
+            </div>    
+     
+            
+            <div class="  p-4 border-2 border-green-700 relative w-full h-80" id="mig">
+                <img src="images/about1.jpg" class=" w-full h-80  absolute right-6" alt="">
             </div>
-            <div class="  p-3 ">
-                <img src="images/about1.jpg" class="w-3xl    " alt="">
+        
+      
+                <div class="">
+                    <div class=" p-4 border-2 border-green-700 w-full h-80 relative">
+                <img src="images/about2.jpg" class="w-full h-80 absolute left-6" alt="">
             </div>
         </div>
-
-                <div class="flex flex-1/2 justify-between md:flex-nowrap flex-wrap md:flex-row-reverse">
-                    <div class=" p-3">
-                <img src="images/about2.jpg" class="w-3xl" alt="">
-            </div>
-            <div class="p-11 ">
+         <div class="p-24">
                 <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium iste distinctio vel, 
                     sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
@@ -92,22 +101,49 @@
                      laborum atque voluptate vitae, quaerat inventore?
                 </p>
             </div> 
-        </div>
+         </div>
     </div>
 
     <!-- Services -->
 
 
-        <div class="bg-gray-800 h-auto w-full">
-        <h1 class="text-center text-5xl text-white">
+        <div class="bg-gray-800 h-auto w-full md:flex-nowrap flex-wrap md:flex-row-reverse " >
+         <div class="text-center align-middle justify-center flex  relative p-5" id="two">
+                    <h1 class="text-center text-5xl text-white p-3 absolute  opacity-100 " id="text">
             Our <span class="text-green-700" >Services</span>
         </h1>
-        <div class="flex flex-1/2 justify-between md:flex-nowrap flex-wrap md:flex-row-reverse">
-            <div class="p-11 flex-2/4">
-                <h1 class="text-5xl p-5" >
-                    <span class="text-green-700" >Web</span> Development
-                </h1>
-                <p class="p-5">
+     
+        </div>
+
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-20 mt-15 px-8">   
+            <div class="p-25">
+              <h1 class="text-5xl mb-1" >Web <span class="text-green-700">Development</span></h1>
+                   <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium iste distinctio vel, 
+                    sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
+                     sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
+                      sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
+                       sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
+                     laborum atque voluptate vitae, quaerat inventore?
+                </p>
+            </div>    
+        <div class="">
+            
+            <div class="  p-4 border-2 border-green-700 relative w-full h-80" id="mig">
+                <img src="images/services1.jpg" class=" w-full h-80  absolute right-6" alt="">
+            </div>
+        </div>
+      
+                <div class="">
+                    <div class=" p-4 border-2 border-green-700 w-full h-80 relative">
+                <img src="images/services2.jpg" class="w-full h-80 absolute left-6" alt="">
+            </div>
+        </div>
+         <div class="p-24">
+          <h1 class="text-5xl mb-1  ">
+            App <span class="text-green-700" >Development</span>
+          </h1>
+                <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium iste distinctio vel, 
                     sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
                      sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
@@ -116,58 +152,35 @@
                      laborum atque voluptate vitae, quaerat inventore?
                 </p>
             </div>
-            <div class=" p-3   ">
-                <img src="images/services1.jpg" class="w-96  mr-28   " alt="">
+            
+             <div class="p-25">
+              <h1 class="text-5xl mb-1" >AI <span class="text-green-700">Stratgies</span></h1>
+                   <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium iste distinctio vel, 
+                    sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
+                     sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
+                      sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
+                       sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
+                     laborum atque voluptate vitae, quaerat inventore?
+                </p>
+            </div>    
+        <div class="">
+            
+            <div class="  p-4 border-2 border-green-700 relative w-full h-80" id="mig">
+                <img src="images/services3.jpg" class=" w-full h-80  absolute right-6" alt="">
             </div>
         </div>
 
-                <div class="flex flex-1/2 justify-between md:flex-nowrap flex-wrap md:flex-row-reverse">
-                    <div class="p-3 ">
-                <img src="images/services2.jpg" class="w-96  mr-28 " alt="">
-            </div>
-            <div class="p-11 flex-2/4">
-                <h1 class="text-5xl p-5">
-                   <span class="text-green-700">App </span>  Development
-                </h1>
-                <p class="p-5">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium iste distinctio vel, 
-                    sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
-                     sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
-                      sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
-                       sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
-                     laborum atque voluptate vitae, quaerat inventore?
-                </p>
-            </div> 
-        </div>
-
-        <div class="flex flex-1/2 justify-between md:flex-nowrap flex-wrap md:flex-row-reverse">
-            <div class="p-11 flex-2/4">
-                <h1 class="text-5xl p-5" >
-                    <span class="text-green-700" >AI</span> Strategies
-                </h1>
-                <p class="p-5">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium iste distinctio vel, 
-                    sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
-                     sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
-                      sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
-                       sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
-                     laborum atque voluptate vitae, quaerat inventore?
-                </p>
-            </div>
-            <div class="  p-3 ">
-                <img src="images/services1.jpg" class="w-96  mr-28   " alt="">
+           <div class="">
+                    <div class=" p-4 border-2 border-green-700 w-full h-80 relative">
+                <img src="images/services4.jpg" class="w-full h-80 absolute left-6" alt="">
             </div>
         </div>
-
-                <div class="flex flex-1/2 justify-between md:flex-nowrap flex-wrap md:flex-row-reverse">
-                    <div class="p-3 ">
-                <img src="images/services2.jpg" class="w-96  mr-28 " alt="">
-            </div>
-            <div class="p-11 flex-2/4">
-                <h1 class="text-5xl p-5">
-                   <span class="text-green-700"> Project </span> Managament
-                </h1>
-                <p class="p-5">
+         <div class="p-24">
+          <h1 class="text-5xl mb-1  ">
+            Software <span class="text-green-700" >Managament</span>
+          </h1>
+                <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium iste distinctio vel, 
                     sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
                      sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
@@ -175,33 +188,58 @@
                        sapiente id asperiores ad corporis incidunt totam maxime architecto impedit odio autem,
                      laborum atque voluptate vitae, quaerat inventore?
                 </p>
-            </div> 
-                </div>
+            </div>
+
+
+         </div>         
     </div>
 
+<!-- casroul -->
+
+<div class="swiper mySwiper w-full h-160">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="images/contact1.jpg" class="w-full ">
+    </div>
+    <div class="swiper-slide">
+      <img src="images/services3.jpg" class="w-full ">
+    </div>
+    <div class="swiper-slide">
+      <img src="images/services2.jpg" class="w-full ">
+    </div>
+  </div>
+  <!-- Optional navigation -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+
+
+
+
 <!-- help-->
-<div class="relative w-full">
-    <img class="h-64 w-full object-cover " src="https://images.unsplash.com/photo-1680725779155-456faadefa26" alt="Random image">
+<div class="relative w-full ">
+    <img class="h-96 w-full object-cover " src="https://images.unsplash.com/photo-1680725779155-456faadefa26" alt="Random image">
     <div class="absolute inset-0 bg-gray-700 opacity-60 "></div>
     <div class="absolute inset-0 flex items-center justify-center">
-        <h2 class="text-white text-3xl font-bold">Who can we <span class="text-green-700" >help</span> you ?</h2>
+        <h2 class="text-white text-3xl font-bold">Who can we <span class="text-green-700 animate-pulse cursor-pointer hover:text-blue-600" >help</span> you ?</h2>
     </div>
 </div>
 
 <!-- footer -->
 <div class="flex bg-gray-800 w-full h-auto  justify-between md:flex-nowrap flex-wrap " >
 <div>
-<h2 class="p-7 text-4xl sm:text-2xl " >
-    Next Genration Private LTd
+<h2 class="p-7 text-2xl text-center ml-4 md:text-2xl animate-pulse text-green-800 cursor-pointer" >
+    <a href="#Home">Next Genration Private LTd</a>
 </h2>
 <div class="flex p-2 justify-center cursor-pointer gap-3 md:text-left">
-    <a href="https://www.instagram.com/"><i class="fa-brands fa-facebook  hover:text-green-700 text-4xl "></i></a>
-    <i class="fa-brands fa-instagram hover:text-green-700 text-4xl"></i>
+    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram  hover:text-green-700 text-4xl  "></i></a>
+    <i class="fa-brands fa-facebook hover:text-green-700 text-4xl"></i>
     <i class="fa-brands fa-twitter hover:text-green-700 text-4xl "></i>
     <i class="fa-brands fa-discord   hover:text-green-700 text-4xl"></i>
 </div>
 </div>
-<div class="grid gap-2.5 p-10 cursor-pointer text-center flex-2/4  ">
+<div class="grid gap-2.5 p-10 cursor-pointer   ">
     <h1 class="text-2xl">
         Links
     </h1>
@@ -211,7 +249,7 @@
 <h3 class="hover:text-green-700">Services</h3>
 </div>
 
-<div class="flex flex-col gap-2.5 p-10 cursor-pointer md:text-center">
+<div class="flex flex-col gap-2.5 p-10 cursor-pointer md:text-left">
 <h1 class="text-2xl">
     contact us
 </h1>
@@ -227,13 +265,46 @@
 </div>
 
 <div class="bg-green-600 flex flex-2/4 h-auto justify-between md:flex-nowrap flex-wrap ">
-    <div class="text-center">
-   © 2025 NGEN - all rights reserved
+    <div class="text-center align-middle p-3">
+   © 2025  - all rights reserved
     </div>
 
-    <div class="text-center flex-2/4">
+    <div class="text-center p-3">
         Next Generation PVT LTD
     </div>
 </div>
+
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
+<script src="script.js"></script>
+<script>
+
+    // Toggle mobile menu visibility
+       const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.classList.contains('open');
+
+      toggle.classList.toggle('open');
+      toggle.classList.toggle('group-[.open]');
+
+      if (!isOpen) {
+        menu.classList.remove('max-h-0', 'opacity-0');
+        menu.classList.add('max-h-96', 'opacity-100');
+      } else {
+        menu.classList.add('max-h-0', 'opacity-0');
+        menu.classList.remove('max-h-96', 'opacity-100');
+      }
+    });
+
+  const swiper = new Swiper('.mySwiper', {
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
 </html>

@@ -1,0 +1,16 @@
+#img{
+    animation-name: hide;
+   
+    animation-duration: 2s;
+}
+@keyframes hide{
+    
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+
+
+}

@@ -1,46 +1,26 @@
+    // Toggle mobile menu visibility
+       const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
 
-// Initialize Lenis
-const lenis = new Lenis({
-  autoRaf: true,
-});
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.classList.contains('open');
 
-// Listen for the scroll event and log the event data
-lenis.on('scroll', (e) => {
-  console.log(e);
-});
+      toggle.classList.toggle('open');
+      toggle.classList.toggle('group-[.open]');
 
-
-
-var tl = gsap.timeline()
-tl.from("#h2",{
-    y: -30,
-    duration : 1.5,
-    opacity:0,
-    stagger:0.3,
-    delay:1
-})
-
-gsap.from("#img",{
-    opacity:0,
-    duration:2,
-    delay:2
-})
-
-gsap.registerPlugin(ScrollTrigger);
-
-    let lt = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#two",
-        start: "50% 50%",
-        end: "120% 50%",
-        scrub: 1,
-        markers: true
+      if (!isOpen) {
+        menu.classList.remove('max-h-0', 'opacity-0');
+        menu.classList.add('max-h-96', 'opacity-100');
+      } else {
+        menu.classList.add('max-h-0', 'opacity-0');
+        menu.classList.remove('max-h-96', 'opacity-100');
       }
     });
 
-    lt.to("#mig", {
- rotateY:360,
- duration:2,
-    });
-
-   
+  const swiper = new Swiper('.mySwiper', {
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });

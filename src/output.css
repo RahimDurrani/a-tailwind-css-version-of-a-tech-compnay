@@ -287,6 +287,9 @@
   .h-96 {
     height: calc(var(--spacing) * 96);
   }
+  .h-\[450px\] {
+    height: 450px;
+  }
   .h-auto {
     height: auto;
   }
@@ -445,6 +448,9 @@
   .to-blue-950 {
     --tw-gradient-to: var(--color-blue-950);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .object-contain {
+    object-fit: contain;
   }
   .object-cover {
     object-fit: cover;
